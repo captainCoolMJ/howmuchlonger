@@ -1,0 +1,22 @@
+{
+  "name": "howmuchlonger",
+  "version": "0.0.0",
+  "description": "Why can't it be the end of the week?",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Matt Jennings",
+  "license": "MIT",
+  "dependencies": {
+    "express": "~4.12.0",
+    "http-server": "~0.8.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-express-server": "~0.4.19",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-compass": "~1.0.1"
+  }
+}

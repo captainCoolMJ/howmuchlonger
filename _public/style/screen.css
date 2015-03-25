@@ -1,0 +1,189 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 5, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../.rvm/gems/ruby-2.0.0-p353/gems/compass-core-1.0.0.alpha.16/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 16, ../../sass/screen.scss */
+.color-great {
+  background: #0088cc;
+}
+
+/* line 17, ../../sass/screen.scss */
+.color-good {
+  background: #c0d860;
+}
+
+/* line 18, ../../sass/screen.scss */
+.color-warning {
+  background: #eec900;
+}
+
+/* line 19, ../../sass/screen.scss */
+.color-bad {
+  background: #ff6103;
+}
+
+/* line 20, ../../sass/screen.scss */
+.color-horrible {
+  background: maroon;
+}
+
+/* line 22, ../../sass/screen.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 25, ../../sass/screen.scss */
+body {
+  background: #111;
+  color: #FFF;
+  font: 300 normal 100%/1.1 "Open Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* line 32, ../../sass/screen.scss */
+h1, h2, h3, h4 {
+  font-weight: 300;
+  padding: .25em;
+}
+
+@media screen and (min-width: 500px) {
+  /* line 37, ../../sass/screen.scss */
+  header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+  }
+}
+/* line 45, ../../sass/screen.scss */
+header h1 {
+  padding: 1em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* line 52, ../../sass/screen.scss */
+#clock {
+  opacity: 0;
+  transition: 1s opacity;
+}
+/* line 56, ../../sass/screen.scss */
+#clock.loaded {
+  opacity: 1;
+}
+
+/* line 61, ../../sass/screen.scss */
+section {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 500px) {
+  /* line 61, ../../sass/screen.scss */
+  section {
+    text-align: left;
+  }
+}
+/* line 75, ../../sass/screen.scss */
+section h2 {
+  font-size: 1.5em;
+}
+/* line 77, ../../sass/screen.scss */
+section ul li {
+  display: inline-block;
+  padding: .5em 1em;
+}
+@media screen and (max-width: 500px) {
+  /* line 77, ../../sass/screen.scss */
+  section ul li {
+    display: block;
+    padding: .5em 1em;
+  }
+}
+/* line 87, ../../sass/screen.scss */
+section .percent {
+  height: 15px;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+/* line 93, ../../sass/screen.scss */
+section .percent-wrap {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin: 10px 0;
+}
+/* line 99, ../../sass/screen.scss */
+section .percent-sofar {
+  width: 0.5%;
+  background: rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,103 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$color-great: #08C;
+$color-good: #C0D860;
+$color-warning: #EEC900;
+$color-bad: #FF6103;
+$color-horrible: #800000;
+
+$sml-width: 500px;
+
+.color-great { background: $color-great; }
+.color-good { background: $color-good; }
+.color-warning { background: $color-warning; }
+.color-bad { background: $color-bad; }
+.color-horrible { background: $color-horrible; }
+
+html,
+body { height: 100%; }
+
+body {
+	background: #111;
+	color: #FFF;
+	font: 300 normal 100%/1.1 "Open Sans", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1,h2,h3,h4 {
+	font-weight: 300;
+	padding: .25em;
+}
+
+header {
+
+	@media screen and (min-width: $sml-width) {
+		top: 0;
+		width: 100%;
+		position: fixed;
+	}
+
+	h1 {
+		padding: 1em;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+}
+
+#clock {
+	opacity: 0;
+	transition: 1s opacity;
+
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+section {
+	text-align: center;
+	width: 90%;
+	margin: 0 auto;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+	
+	@media screen and (max-width: $sml-width) {
+		text-align: left;
+	}
+
+	h2 { font-size: 1.5em; }
+
+	ul li {
+		display: inline-block;
+		padding: .5em 1em;
+	
+		@media screen and (max-width: $sml-width) {
+			display: block;
+			padding: .5em 1em;
+		}
+	}
+
+	.percent {
+		height: 15px;
+		border-radius: 2px;
+		box-shadow: 0 0 2px rgba(0,0,0,.5);
+	}
+
+	.percent-wrap {
+		background: rgba(255,255,255,.6);	
+		border: 1px solid rgba(0,0,0,.5);
+		margin: 10px 0;
+	}
+
+	.percent-sofar {
+		width: 0.5%;
+		background: rgba(255,255,255,.5);
+	}
+}

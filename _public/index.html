@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+
+	<title>How much longer?</title>
+	
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/screen.css">
+
+	</head>
+	<body>
+		<header>
+			<h1>How much longer?</h1>
+		</header>
+		<section id="clock">
+			<h2>Get ready for the weekend</h2>
+			<ul>
+				<li id="days"></li>
+				<li id="hours"></li>
+				<li id="minutes"></li>
+				<li id="seconds"></li>
+			</ul>
+
+			<div class="percent percent-wrap" id="percentTotalBar">
+				<div class="percent percent-sofar" id="percentSofarBar"></div>
+			</div>
+			<p>Your work week is <span id="percentDone"></span> finished.</p>
+		</section>
+	</body>
+	<script src="scripts/clockTick.js"></script>
+</html>
