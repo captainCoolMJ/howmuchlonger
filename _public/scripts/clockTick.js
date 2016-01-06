@@ -106,30 +106,26 @@
 		start: 0
 	};
 
-	function tick( clock ) {
-		clock.seconds--;
+	function setClockHTML (tSeconds, tMinutes, tHours, tDays) {
+		seconds.innerHTML = tSeconds + " second" + determineS(tSeconds);
+		minutes.innerHTML = tMinutes + " minute" + determineS(tMinutes);
+		hours.innerHTML = tHours + " hour" + determineS(tHours);
+		days.innerHTML = tDays + " day" + determineS(tDays);
+	}
 
+	function tick( clock ) {
+
+		clock.raw -= 1000;
 		clock.now++;
 
-		if( clock.seconds < 0 ) {
-			clock.seconds = 59;
-			clock.minutes--;
+		var secondsLeft = clock.raw/1000;
 
-			if( clock.minutes < 0 ) {
-				clock.minutes = 59;
-				clock.hours--;
+		clock.seconds = (secondsLeft | 0) % 60;
+		clock.minutes = (secondsLeft/60 | 0) % 60;
+		clock.hours = (secondsLeft/(60*60) | 0) % 24;
+		clock.days = (secondsLeft/(60*60*24) | 0);
 
-				if( clock.hours < 0 ) {
-					clock.hours = 23;						
-					clock.days--;
-				}
-			}
-		}
-
-		seconds.innerHTML = clock.seconds + " second" + determineS(clock.seconds);
-		minutes.innerHTML = clock.minutes + " minute" + determineS(clock.minutes);
-		hours.innerHTML = clock.hours + " hour" + determineS(clock.hours);
-		days.innerHTML = clock.days + " day" + determineS(clock.days);
+		setClockHTML(clock.seconds, clock.minutes, clock.hours, clock.days);
 
 		var percent = buildPercent(clock.now, clock.end, clock.start),
 			status = getStatusClass(percent),
@@ -168,12 +164,7 @@
 
 		if( res.meta.weekend ) {
 
-			// tick(timeObj);
-
-			seconds.innerHTML = timeObj.seconds + " second" + determineS(timeObj.seconds);
-			minutes.innerHTML = timeObj.minutes + " minute" + determineS(timeObj.minutes);
-			hours.innerHTML = timeObj.hours + " hour" + determineS(timeObj.hours);
-			days.innerHTML = timeObj.days + " day" + determineS(timeObj.days);
+			setClockHTML(timeObj.seconds, timeObj.minutes, timeObj.hours, timeObj.days);
 
 			percentDone.innerHTML = "100%";
 			sofarBar.style.width = "100%";
@@ -186,6 +177,8 @@
 		timeObj.hours = res.hours%24;
 		timeObj.minutes = res.minutes%60;
 		timeObj.seconds = res.seconds%60;
+
+		timeObj.raw = res.ms;
 
 		timeObj.now = parseInt(res.meta.now/1000);
 		timeObj.end = parseInt(res.meta.end/1000);
